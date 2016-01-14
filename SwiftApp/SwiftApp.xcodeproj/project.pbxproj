@@ -13,6 +13,7 @@
 		BA0CA5781C3529EC000003E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA0CA5761C3529EC000003E8 /* LaunchScreen.storyboard */; };
 		BA0CA5831C3529ED000003E8 /* SwiftAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CA5821C3529ED000003E8 /* SwiftAppTests.swift */; };
 		BA0CA58E1C3529ED000003E8 /* SwiftAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CA58D1C3529ED000003E8 /* SwiftAppUITests.swift */; };
+		BAD646471C47D2AF00F2CAFF /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD646461C47D2AF00F2CAFF /* iAd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		BA0CA5891C3529ED000003E8 /* SwiftAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA0CA58D1C3529ED000003E8 /* SwiftAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAppUITests.swift; sourceTree = "<group>"; };
 		BA0CA58F1C3529ED000003E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAD646461C47D2AF00F2CAFF /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD646471C47D2AF00F2CAFF /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +103,7 @@
 				BA0CA5741C3529EC000003E8 /* Assets.xcassets */,
 				BA0CA5761C3529EC000003E8 /* LaunchScreen.storyboard */,
 				BA0CA5791C3529EC000003E8 /* Info.plist */,
+				BAD646451C47D29E00F2CAFF /* Frameworks */,
 			);
 			path = SwiftApp;
 			sourceTree = "<group>";
@@ -120,6 +124,14 @@
 				BA0CA58F1C3529ED000003E8 /* Info.plist */,
 			);
 			path = SwiftAppUITests;
+			sourceTree = "<group>";
+		};
+		BAD646451C47D29E00F2CAFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAD646461C47D2AF00F2CAFF /* iAd.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -20,3 +20,7 @@
 + 	custom navigation bar
 + 	build a button with pure code without IB or SB
 + 	Unwapping optionals
+
+### Day 2
++	using iAd (The exam is around the corner,so tody's content is few,sorry guys)
+

@@ -6,73 +6,94 @@
 //  Copyright © 2015年 lmonster. All rights reserved.
 //
 
-// Swift Learning in Demo Day 2
+// Swift Learning in Demo Day 3
 
-//* iAD(it's a way to earn money especially for individual developers)
-//  ******************************************************************
-//  before we use iAd ,we need to impot iAd module (module is the same 
-//  as framework).
-//  
-//  It provides two class to display ads:
-//  1.ADBannerView
-//  2.ADInterstitialAd
+// ***************************************************************
 //
-//  We use ADBannerView to show view or ADInterstitialAd to manage ads
-//  and show id.
+// the class created by coder doesn't need to be import. 
+// The compiler does all the work for you
+// !Attention: after you change the name of the class or file name
+// the compiler won't aysnc it immediately unless you restart Xcode
 //
-//  !!Attention:
-//  ADInterstitialAd is not a view object.
-//  ******************************************************************
+// ***************************************************************
 
 import UIKit
-import iAd
 
 let ScreenWidth = UIScreen.mainScreen().bounds.size.width
 let ScreenHeight = UIScreen.mainScreen().bounds.size.height
+let rgbColor = {(colorValue:Int) -> UIColor
+    in
+    let blue = Float(colorValue & 0xff) / 255.0
+    let green = Float((colorValue >> 8) & 0xff) / 255.0
+    let red = Float((colorValue >> 16) & 0xff) / 255.0
+    return UIColor(colorLiteralRed: red, green:green, blue:blue,alpha:1)
+}
 
-class ViewController: UIViewController,ADBannerViewDelegate,ADInterstitialAdDelegate {
+class ViewController: UIViewController {
+    
+    private let numberLabel: UILabel = {
+        let label = UILabel(frame: CGRect(x: (ScreenWidth - 120) / 2, y: 120, width: 240, height: 120))
+        return label
+    } ()
+    
+    private let slider: UISlider = {
+        let sliderView = UISlider(frame: CGRect(x: 120, y: 240, width: 240, height: 20))
+        return sliderView
+    } ()
+    
+    private let textField: UITextField = {
+        let temp = UITextField(frame: CGRect(x: 120, y: 65, width: 240, height: 120))
+        return temp
+    } ()
+    
     
     override func viewDidLoad() {
-        self.title = "iAD";
         
-        // This is the view that provide the ads.
-        // we can select view type through ADAdType enum(it has tow type now--banner,mediumRectanle)
-        let adBanner = ADBannerView(adType: ADAdType.Banner)
-        adBanner.frame.origin = CGPoint(x: 0, y: ScreenHeight - 50)
-        adBanner.delegate = self;
-        self.view.addSubview(adBanner)
+        self.title = "UISlider and UITextView"
         
-        let adInterstitialAd = ADInterstitialAd()
-        adInterstitialAd.delegate = self
+        self.view.addSubview(numberLabel)
+        numberLabel.textColor = UIColor.blackColor()
+        numberLabel.font = UIFont.systemFontOfSize(50)
+        
+        self.view.addSubview(slider)
+        slider.addTarget(self, action: "sliderValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        
+        // slider value
+        slider.maximumValue = 100
+        slider.minimumValue = 0
+        
+        // tint of tracks
+        slider.minimumTrackTintColor = rgbColor(0xf1c40f)
+        slider.maximumTrackTintColor = rgbColor(0x95a5a6)
+        
+        self.view.addSubview(self.textField)
+        self.textField.layer.cornerRadius = 5
+        self.textField.layer.borderWidth = 2
+        self.textField.layer.borderColor = UIColor(white: 0.5, alpha: 1).CGColor
+        self.textField.font = UIFont.systemFontOfSize(30)
+        self.textField.text = "0$"
+        
+        let view: keyboardView = keyboardView()
+        view.frame = CGRect(x: 0, y: 0, width: 320, height: 30)
+        view.backgroundColor = UIColor.orangeColor()
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 120, height: 30))
+        label.text = "this input accessory view"
+        label.sizeToFit()
+        view.addSubview(label)
+        self.textField.inputAccessoryView = view
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.view.backgroundColor = UIColor(white: 0.8, alpha: 1.0)
+        
+        self.view.backgroundColor = UIColor(white: 0.9, alpha: 1)
     }
     
-    
-    // ADBanner delegate
-    func bannerViewWillLoadAd(banner: ADBannerView!) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.textField.resignFirstResponder()
     }
     
-    func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
-        return true
-    }
-    
-    func bannerViewDidLoadAd(banner: ADBannerView!) {
-    }
-    
-    // ADInterititial delegate
-    func interstitialAdActionDidFinish(interstitialAd: ADInterstitialAd!) {
-        print("interstitialad load finish")
-    }
-    
-    func interstitialAdDidUnload(interstitialAd: ADInterstitialAd!) {
-        interstitialAd.presentInView(self.view)
-    }
-    
-    func interstitialAd(interstitialAd: ADInterstitialAd!, didFailWithError error: NSError!) {
-        print(error)
+    func sliderValueChanged (aSlider: UISlider!) {
+        self.textField.text = "\(aSlider.value)$"
     }
 }

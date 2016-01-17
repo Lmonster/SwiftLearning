@@ -13,6 +13,7 @@
 		BA0CA5781C3529EC000003E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA0CA5761C3529EC000003E8 /* LaunchScreen.storyboard */; };
 		BA0CA5831C3529ED000003E8 /* SwiftAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CA5821C3529ED000003E8 /* SwiftAppTests.swift */; };
 		BA0CA58E1C3529ED000003E8 /* SwiftAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CA58D1C3529ED000003E8 /* SwiftAppUITests.swift */; };
+		BA53D33E1C4B7F2300EC49E8 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA53D33D1C4B7F2300EC49E8 /* KeyboardView.swift */; };
 		BAD646471C47D2AF00F2CAFF /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD646461C47D2AF00F2CAFF /* iAd.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		BA0CA5891C3529ED000003E8 /* SwiftAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA0CA58D1C3529ED000003E8 /* SwiftAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAppUITests.swift; sourceTree = "<group>"; };
 		BA0CA58F1C3529ED000003E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA53D33D1C4B7F2300EC49E8 /* KeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		BAD646461C47D2AF00F2CAFF /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				BA0CA5761C3529EC000003E8 /* LaunchScreen.storyboard */,
 				BA0CA5791C3529EC000003E8 /* Info.plist */,
 				BAD646451C47D29E00F2CAFF /* Frameworks */,
+				BA53D33D1C4B7F2300EC49E8 /* KeyboardView.swift */,
 			);
 			path = SwiftApp;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA53D33E1C4B7F2300EC49E8 /* KeyboardView.swift in Sources */,
 				BA0CA5701C3529EC000003E8 /* ViewController.swift in Sources */,
 				BA0CA56E1C3529EC000003E8 /* AppDelegate.swift in Sources */,
 			);

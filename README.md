@@ -24,3 +24,8 @@
 ### Day 2
 +	using iAd (The exam is around the corner,so tody's content is few,sorry guys)
 
+### Day 3
++	set the UITextView's input accessory view
++	handle touches
++	using UISlider
+
